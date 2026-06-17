@@ -120,5 +120,24 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: "Montserrat", sans-serif;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: var(--gold);
+  }
+  .bg-gradient-gold {
+    background-image: var(--gradient-gold);
+  }
+  .bg-gradient-panel {
+    background-image: var(--gradient-panel);
+  }
+  .shadow-gold {
+    box-shadow: var(--shadow-gold);
+  }
+  .shadow-panel {
+    box-shadow: var(--shadow-panel);
   }
 }
