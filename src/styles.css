@@ -61,6 +61,13 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
+@theme inline {
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-gold-deep: var(--gold-deep);
+  --font-display: "Montserrat", sans-serif;
+}
+
 :root {
   --radius: 0.5rem;
   /* Nexus PC — deep black + luxury gold */
