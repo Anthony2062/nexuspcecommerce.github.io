@@ -39,7 +39,7 @@ export function CartDrawer() {
                   className="flex items-center gap-3 rounded-md border border-border bg-secondary/40 p-3"
                 >
                   <img
-                    src={productImage(item.category as Category)}
+                    src={productImage({ id: item.id, category: item.category as Category })}
                     alt={item.name}
                     className="h-12 w-12 rounded object-cover"
                   />
