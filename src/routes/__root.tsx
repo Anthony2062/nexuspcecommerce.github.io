@@ -95,6 +95,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Nexus PC | Hardware Gamer de Alta Performance" },
+      { name: "description", content: "Smart Shopping Companion enhances online shopping with location-based product discovery and a comprehensive product catalog." },
+      { property: "og:description", content: "Smart Shopping Companion enhances online shopping with location-based product discovery and a comprehensive product catalog." },
+      { name: "twitter:description", content: "Smart Shopping Companion enhances online shopping with location-based product discovery and a comprehensive product catalog." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/83c7af5e-1c03-4cf2-b1c1-d24ad4c0dd3d/id-preview-bafa5219--ac3bc856-f506-4391-8378-718f6325134f.lovable.app-1781723643821.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/83c7af5e-1c03-4cf2-b1c1-d24ad4c0dd3d/id-preview-bafa5219--ac3bc856-f506-4391-8378-718f6325134f.lovable.app-1781723643821.png" },
     ],
     links: [
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
