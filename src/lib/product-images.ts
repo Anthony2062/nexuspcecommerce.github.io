@@ -14,7 +14,7 @@ export const CATEGORY_IMAGE: Record<Category, string> = {
 // Auto-discovers any per-product image saved as src/assets/products/<id>.jpg.
 // Add a file with the product id as its name and it maps automatically.
 const PRODUCT_IMAGE_MODULES = import.meta.glob<string>(
-  "@/assets/products/*.jpg",
+  "../assets/products/*.jpg",
   { eager: true, import: "default", query: "?url" },
 );
 
