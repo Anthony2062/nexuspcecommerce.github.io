@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as MontarRouteImport } from './routes/montar'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as CameraRouteImport } from './routes/camera'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -30,6 +31,11 @@ const LoginRoute = LoginRouteImport.update({
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CheckoutRoute = CheckoutRouteImport.update({
+  id: '/checkout',
+  path: '/checkout',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CameraRoute = CameraRouteImport.update({
   id: '/camera',
   path: '/camera',
@@ -44,6 +50,7 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/camera': typeof CameraRoute
+  '/checkout': typeof CheckoutRoute
   '/login': typeof LoginRoute
   '/montar': typeof MontarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -51,6 +58,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/camera': typeof CameraRoute
+  '/checkout': typeof CheckoutRoute
   '/login': typeof LoginRoute
   '/montar': typeof MontarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
@@ -59,21 +67,36 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/camera': typeof CameraRoute
+  '/checkout': typeof CheckoutRoute
   '/login': typeof LoginRoute
   '/montar': typeof MontarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/camera' | '/login' | '/montar' | '/sitemap.xml'
+  fullPaths:
+    | '/'
+    | '/camera'
+    | '/checkout'
+    | '/login'
+    | '/montar'
+    | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/camera' | '/login' | '/montar' | '/sitemap.xml'
-  id: '__root__' | '/' | '/camera' | '/login' | '/montar' | '/sitemap.xml'
+  to: '/' | '/camera' | '/checkout' | '/login' | '/montar' | '/sitemap.xml'
+  id:
+    | '__root__'
+    | '/'
+    | '/camera'
+    | '/checkout'
+    | '/login'
+    | '/montar'
+    | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CameraRoute: typeof CameraRoute
+  CheckoutRoute: typeof CheckoutRoute
   LoginRoute: typeof LoginRoute
   MontarRoute: typeof MontarRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
@@ -102,6 +125,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/checkout': {
+      id: '/checkout'
+      path: '/checkout'
+      fullPath: '/checkout'
+      preLoaderRoute: typeof CheckoutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/camera': {
       id: '/camera'
       path: '/camera'
@@ -122,6 +152,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CameraRoute: CameraRoute,
+  CheckoutRoute: CheckoutRoute,
   LoginRoute: LoginRoute,
   MontarRoute: MontarRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
