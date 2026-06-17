@@ -1,10 +1,12 @@
+import { Link, useNavigate } from "@tanstack/react-router";
 import { X, Trash2 } from "lucide-react";
 import { useCart, formatBRL } from "@/lib/cart";
 import { productImage } from "@/lib/product-images";
 import type { Category } from "@/data/products";
 
 export function CartDrawer() {
-  const { items, total, isOpen, closeCart, removeItem, clear } = useCart();
+  const { items, total, isOpen, closeCart, removeItem } = useCart();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -72,13 +74,20 @@ export function CartDrawer() {
           <button
             disabled={items.length === 0}
             onClick={() => {
-              clear();
               closeCart();
+              navigate({ to: "/checkout" });
             }}
             className="w-full rounded-md bg-gradient-gold px-4 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-gold transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
           >
             Finalizar Compra
           </button>
+          <Link
+            to="/montar"
+            onClick={closeCart}
+            className="mt-2 block w-full rounded-md border border-gold/40 px-4 py-2.5 text-center text-xs font-bold uppercase tracking-wider text-gold transition-colors hover:bg-secondary"
+          >
+            Montar um PC completo
+          </Link>
         </div>
       </aside>
     </>
