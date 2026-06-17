@@ -10,6 +10,7 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as MontarRouteImport } from './routes/montar'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as CameraRouteImport } from './routes/camera'
 import { Route as IndexRouteImport } from './routes/index'
@@ -17,6 +18,11 @@ import { Route as IndexRouteImport } from './routes/index'
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MontarRoute = MontarRouteImport.update({
+  id: '/montar',
+  path: '/montar',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -39,12 +45,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/camera': typeof CameraRoute
   '/login': typeof LoginRoute
+  '/montar': typeof MontarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/camera': typeof CameraRoute
   '/login': typeof LoginRoute
+  '/montar': typeof MontarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRoutesById {
@@ -52,20 +60,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/camera': typeof CameraRoute
   '/login': typeof LoginRoute
+  '/montar': typeof MontarRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/camera' | '/login' | '/sitemap.xml'
+  fullPaths: '/' | '/camera' | '/login' | '/montar' | '/sitemap.xml'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/camera' | '/login' | '/sitemap.xml'
-  id: '__root__' | '/' | '/camera' | '/login' | '/sitemap.xml'
+  to: '/' | '/camera' | '/login' | '/montar' | '/sitemap.xml'
+  id: '__root__' | '/' | '/camera' | '/login' | '/montar' | '/sitemap.xml'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   CameraRoute: typeof CameraRoute
   LoginRoute: typeof LoginRoute
+  MontarRoute: typeof MontarRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
 }
 
@@ -76,6 +86,13 @@ declare module '@tanstack/react-router' {
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/montar': {
+      id: '/montar'
+      path: '/montar'
+      fullPath: '/montar'
+      preLoaderRoute: typeof MontarRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -106,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   CameraRoute: CameraRoute,
   LoginRoute: LoginRoute,
+  MontarRoute: MontarRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
 }
 export const routeTree = rootRouteImport
