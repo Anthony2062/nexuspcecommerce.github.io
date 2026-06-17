@@ -9,6 +9,9 @@ export const CATEGORY_IMAGE: Record<Category, string> = {
   processador: processador,
   fan: fan,
   gabinete: gabineteAsset.url,
+  fonte: fan,
+  "memoria-ram": processador,
+  ssd: processador,
 };
 
 // Auto-discovers any per-product image saved as src/assets/products/<id>.jpg.

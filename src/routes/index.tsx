@@ -6,6 +6,8 @@ import { ProductCard } from "@/components/ProductCard";
 import { PRODUCTS, CATEGORY_LABELS, type Category } from "@/data/products";
 import { CITIES, getCity } from "@/data/cities";
 import { haversine, nearestCity, formatDistance } from "@/lib/geo";
+import { Link } from "@tanstack/react-router";
+import logo from "@/assets/logo_nexus_pc.png.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -99,6 +101,13 @@ function Index() {
       <section className="relative overflow-hidden border-b border-border">
         <div className="absolute inset-0 bg-gradient-panel" />
         <div className="relative mx-auto max-w-7xl px-4 py-16 text-center sm:px-6 sm:py-20">
+          <img
+            src={logo.url}
+            alt="Logo Nexus PC"
+            width={320}
+            height={320}
+            className="mx-auto mb-6 h-40 w-40 object-contain drop-shadow-[0_0_30px_oklch(0.766_0.124_86/0.35)] sm:h-52 sm:w-52"
+          />
           <p className="mb-3 text-xs font-bold uppercase tracking-[0.3em] text-gold">
             High Performance Gaming Hardware
           </p>
@@ -109,6 +118,12 @@ function Index() {
             Componentes premium com disponibilidade inteligente por região.
             Ative sua localização e veja o que está mais perto de você.
           </p>
+          <Link
+            to="/montar"
+            className="mt-7 inline-flex items-center gap-2 rounded-md bg-gradient-gold px-6 py-3 text-sm font-bold uppercase tracking-wider text-primary-foreground shadow-gold transition-opacity hover:opacity-90"
+          >
+            Monte seu PC
+          </Link>
         </div>
       </section>
 

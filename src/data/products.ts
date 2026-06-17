@@ -1,4 +1,11 @@
-export type Category = "placa-de-video" | "processador" | "gabinete" | "fan";
+export type Category =
+  | "placa-de-video"
+  | "processador"
+  | "gabinete"
+  | "fan"
+  | "fonte"
+  | "memoria-ram"
+  | "ssd";
 
 export interface Product {
   id: number;
@@ -15,6 +22,9 @@ export const CATEGORY_LABELS: Record<Category | "todos", string> = {
   processador: "Processadores",
   gabinete: "Gabinetes",
   fan: "Fans / Refrigeração",
+  fonte: "Fontes",
+  "memoria-ram": "Memória RAM",
+  ssd: "SSDs",
 };
 
 export const PRODUCTS: Product[] = [
@@ -59,4 +69,25 @@ export const PRODUCTS: Product[] = [
   { id: 54, name: "Water Cooler NZXT Kraken Elite 360", description: "Bomba Asetek de 7ª geração, resfriando os processadores mais quentes sem ruído.", price: 1899.0, category: "fan", cityId: "poa" },
   { id: 55, name: "Arctic Liquid Freezer III 420", description: "Refrigeração líquida AIO de 420mm com a melhor relação custo-térmica do mercado.", price: 1099.0, category: "fan", cityId: "rec" },
   { id: 56, name: "Kit Nexus Aurora Gold (6-Pack)", description: "Seis fans com anel RGB dourado exclusivo Nexus e controladora inclusa.", price: 1299.0, category: "fan", cityId: "for" },
+
+  // ---- Fontes ----
+  { id: 70, name: "Corsair RM1000x 1000W 80 Plus Gold", description: "Fonte totalmente modular, silenciosa e com certificação Gold para builds de alto consumo.", price: 1149.0, category: "fonte", cityId: "sp" },
+  { id: 71, name: "Corsair HX1200i 1200W 80 Plus Platinum", description: "Monitoramento digital iCUE e eficiência Platinum para as máquinas mais exigentes.", price: 1899.0, category: "fonte", cityId: "rj" },
+  { id: 72, name: "EVGA SuperNOVA 850 G6 850W", description: "Compacta e robusta, com ventoinha fluid dynamic e resposta a transientes ultra rápida.", price: 949.99, category: "fonte", cityId: "bh" },
+  { id: 73, name: "Seasonic PRIME TX-1000 Titanium", description: "O ápice em eficiência: certificação Titanium e 12 anos de garantia para entusiastas.", price: 2499.0, category: "fonte", cityId: "cwb" },
+  { id: 74, name: "be quiet! Dark Power 13 750W", description: "Operação praticamente inaudível com conector ATX 3.0 nativo para as novas GPUs.", price: 1099.0, category: "fonte", cityId: "poa" },
+
+  // ---- Memória RAM ----
+  { id: 80, name: "Corsair Dominator Platinum RGB 32GB DDR5 6000MHz", description: "Iluminação Capellix e perfil térmico premium para overclock estável e elegante.", price: 1299.0, category: "memoria-ram", cityId: "sp" },
+  { id: 81, name: "G.Skill Trident Z5 RGB 32GB DDR5 6400MHz", description: "Velocidade de elite com latências baixas, ideal para gaming competitivo em DDR5.", price: 1199.0, category: "memoria-ram", cityId: "rj" },
+  { id: 82, name: "Kingston Fury Beast 16GB DDR5 5200MHz", description: "Custo-benefício imbatível para começar a plataforma DDR5 com folga de desempenho.", price: 549.0, category: "memoria-ram", cityId: "bh" },
+  { id: 83, name: "Corsair Vengeance 64GB DDR5 5600MHz", description: "Capacidade massiva para criação de conteúdo, edição de vídeo e multitarefa pesada.", price: 1899.0, category: "memoria-ram", cityId: "cwb" },
+  { id: 84, name: "G.Skill Ripjaws S5 32GB DDR5 6000MHz", description: "Perfil baixo e desempenho elevado, compatível com os maiores coolers do mercado.", price: 999.0, category: "memoria-ram", cityId: "bsb" },
+
+  // ---- SSDs ----
+  { id: 90, name: "Samsung 990 PRO 2TB NVMe Gen4", description: "Leitura sequencial de até 7.450 MB/s, o SSD definitivo para jogos e produtividade.", price: 1499.0, category: "ssd", cityId: "sp" },
+  { id: 91, name: "WD Black SN850X 1TB NVMe Gen4", description: "Game Mode 2.0 dedicado para reduzir loadings e maximizar a performance gamer.", price: 749.0, category: "ssd", cityId: "rj" },
+  { id: 92, name: "Crucial T700 2TB NVMe Gen5", description: "A nova geração PCIe 5.0 com velocidades absurdas de até 12.400 MB/s.", price: 2299.0, category: "ssd", cityId: "bh" },
+  { id: 93, name: "Kingston KC3000 1TB NVMe Gen4", description: "Controladora Phison E18 entregando desempenho consistente em cargas intensas.", price: 689.0, category: "ssd", cityId: "cwb" },
+  { id: 94, name: "Samsung 870 EVO 1TB SATA", description: "Confiabilidade lendária em formato 2.5\" para ampliar o armazenamento com segurança.", price: 549.0, category: "ssd", cityId: "poa" },
 ];
