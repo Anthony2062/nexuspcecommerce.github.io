@@ -18,7 +18,7 @@ export function ProductCard({ product, distance }: ProductCardProps) {
     <article className="group flex flex-col overflow-hidden rounded-xl border border-border bg-gradient-panel shadow-panel transition-colors hover:border-gold/50">
       <div className="relative flex aspect-square items-center justify-center bg-black/40 p-4">
         <img
-          src={productImage(product.category)}
+          src={productImage(product)}
           alt={product.name}
           loading="lazy"
           className="max-h-full w-full object-contain transition-transform duration-500 group-hover:scale-105"
